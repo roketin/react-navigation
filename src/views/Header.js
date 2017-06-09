@@ -10,6 +10,7 @@ import HeaderTitle from './HeaderTitle';
 import HeaderBackButton from './HeaderBackButton';
 import HeaderStyleInterpolator from './HeaderStyleInterpolator';
 
+
 import type {
   NavigationScene,
   NavigationStyleInterpolator,
@@ -33,9 +34,9 @@ type HeaderState = {
   },
 };
 
-const APPBAR_HEIGHT = Platform.OS === 'ios' ? 44 : 56;
+const APPBAR_HEIGHT = Platform.OS === 'ios' ? 44 : 70;
 const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 20 : 0;
-const TITLE_OFFSET = Platform.OS === 'ios' ? 70 : 40;
+const TITLE_OFFSET = Platform.OS === 'ios' ? 70 : 0;
 
 class Header extends React.PureComponent<void, HeaderProps, HeaderState> {
   static HEIGHT = APPBAR_HEIGHT + STATUSBAR_HEIGHT;
@@ -297,7 +298,7 @@ class Header extends React.PureComponent<void, HeaderProps, HeaderState> {
 const styles = StyleSheet.create({
   container: {
     paddingTop: STATUSBAR_HEIGHT,
-    backgroundColor: Platform.OS === 'ios' ? '#EFEFF2' : '#FFF',
+    backgroundColor: Platform.OS === 'ios' ? '#EFEFF2' : '#1A2133',
     height: STATUSBAR_HEIGHT + APPBAR_HEIGHT,
     shadowColor: 'black',
     shadowOpacity: 0.1,
@@ -324,7 +325,7 @@ const styles = StyleSheet.create({
     right: TITLE_OFFSET,
     top: 0,
     position: 'absolute',
-    alignItems: Platform.OS === 'ios' ? 'center' : 'flex-start',
+    alignItems: Platform.OS === 'ios' ? 'center' : 'center',
   },
   left: {
     left: 0,
